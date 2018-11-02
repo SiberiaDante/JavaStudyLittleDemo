@@ -1,0 +1,41 @@
+package com.dante.demo1;
+
+import org.hibernate.Session;
+import org.junit.jupiter.api.Test;
+
+import com.dante.util.HibernateUtil;
+
+class TestDemo1 {
+
+	@Test
+	void test() {
+		Session session = HibernateUtil.openSession();
+		session.beginTransaction();
+
+		Customer c1 = new Customer();
+		c1.setName("ZhangSan");
+
+		Orders o1 = new Orders();
+		o1.setAddress("BJ");
+		o1.setMoney(222.22);
+
+		Orders o2 = new Orders();
+		o2.setAddress("TJ");
+		o2.setMoney(333.22);
+
+		c1.getOrders().add(o1);
+		c1.getOrders().add(o2);
+
+		o1.setCustomer(c1);
+		o2.setCustomer(c1);
+
+		session.save(c1);
+		session.save(o1);
+		session.save(o2);
+
+		session.getTransaction().commit();
+		session.close();
+		// HibernateUtil.getSessionFactory().close();
+	}
+
+}

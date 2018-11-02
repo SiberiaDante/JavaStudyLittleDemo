@@ -1,0 +1,5 @@
+package com.jsp.bean;
+
+public class LoginUserBean {
+
+}

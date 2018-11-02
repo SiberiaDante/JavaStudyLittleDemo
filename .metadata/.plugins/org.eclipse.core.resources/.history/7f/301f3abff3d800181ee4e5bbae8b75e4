@@ -1,0 +1,6 @@
+package com.dante.demo1;
+
+public class Order {
+	private Integer id;
+
+}
