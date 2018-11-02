@@ -7,6 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>Login Failed</p>
+	<form action="Cookies.jsp" method="post">
+		<table>
+			<tr>
+				<td>FirstName:</td>
+				<td><input type="text" name="first_name" /></td>
+			</tr>
+			<tr>
+				<td>SecondName</td>
+				<td><input type="text" name="second_name" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" name="submit" /></td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>

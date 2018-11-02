@@ -7,16 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:useBean id="loginUser" class="com.jsp.bean.LoginUserBean"
-		scope="page"></jsp:useBean>
-
 	<%
-		String username = loginUser.getUsername();
+		Cookie cookie = null;
+		Cookie[] cookies = request.getCookies();
+		out.println("------------print cookies content-------------<br/>");
+		if (cookies != null) {
+			for (Cookie c : cookies) {
+				out.println("name:" + c.getName() + "---value:" + c.getValue() + "<br/>");
+			}
+		}
 	%>
 
-	<p>Login Success,Welcome</p>
-	username:<%=session.getAttribute("username")%>
-	<!-- resulet null -->
-	username:<%=loginUser.getUsername()%>
 </body>
 </html>

@@ -11,8 +11,8 @@
 	<br> get id from session:<%=session.getId()%><br> attribute
 	from session:<%
 		String[] names = session.getValueNames();
-		for(int i=0;i<names.length;i++){
-			out.print(names[i]+"<br>");
+		for (int i = 0; i < names.length; i++) {
+			out.print(names[i] + "<br>");
 		}
 	%>
 </body>

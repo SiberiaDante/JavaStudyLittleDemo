@@ -4,7 +4,19 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>JSPDemo</display-name>
+
+
 	<welcome-file-list>
 		<welcome-file>test.html</welcome-file>
 	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<servlet-class>com.jsp.file.UploadFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<url-pattern>/JSPDemo/UploadFileServlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>
