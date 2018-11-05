@@ -5,6 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hobernate-core"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysql-jdbc"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="resourcec"/>
+	<classpathentry kind="src" path="resource"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,8 +1,0 @@
-package com.dante.demo1;
-
-public class Order {
-	private Integer id;
-	private Double money;
-	private String address;
-	private Customer customer;
-}
