@@ -33,4 +33,15 @@
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.servlet.ServletFileUpload"/>
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.FileItem"/>
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.disk.DiskFileItemFactory"/>
+<fullyQualifiedTypeName name="com.design.absfactory.Shape"/>
+<fullyQualifiedTypeName name="com.design.absfactory.Color"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSpinnerUI"/>
+<fullyQualifiedTypeName name="com.design.absfactory.RectangleShape"/>
+<fullyQualifiedTypeName name="com.design.absfactory.SquareShape"/>
+<fullyQualifiedTypeName name="com.design.absfactory.RedColor"/>
+<fullyQualifiedTypeName name="com.design.absfactory.BlueColor"/>
+<fullyQualifiedTypeName name="com.design.absfactory.ShapeFactory"/>
+<fullyQualifiedTypeName name="com.design.absfactory.ColorFactory"/>
+<fullyQualifiedTypeName name="com.design.absfactory.FactoryProducer"/>
+<fullyQualifiedTypeName name="com.design.absfactory.AbstractFactory"/>
 </qualifiedTypeNameHistroy>
