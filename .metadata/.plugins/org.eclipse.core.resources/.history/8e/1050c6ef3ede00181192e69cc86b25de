@@ -1,5 +1,0 @@
-package com.jsp.filter;
-
-public class LoginFilter implements Filter{
-
-}
