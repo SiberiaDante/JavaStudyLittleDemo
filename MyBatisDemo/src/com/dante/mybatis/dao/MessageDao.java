@@ -19,6 +19,25 @@ import com.dante.mybatis.db.DBAccess;
  *
  */
 public class MessageDao {
+	public void saveMsg(String command,String description,String content) {
+		DBAccess dbAccess = new DBAccess();
+		MessageBean msg=new MessageBean();
+		msg.setCommand(command);
+		msg.setDescription(description);
+		msg.setContent(content);
+		SqlSession sqlSession = null;
+		try {
+			sqlSession=dbAccess.getSqlSession();
+			sqlSession.insert("Message.insertMessage", msg);
+			sqlSession.commit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if (sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+	}
 	
 	public void deleteBatchMessageById(List<Integer> ids) {
 		DBAccess dbAccess = new DBAccess();

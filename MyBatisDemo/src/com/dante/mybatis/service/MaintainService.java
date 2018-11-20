@@ -27,4 +27,10 @@ public class MaintainService {
 		MessageDao msgDao = new MessageDao();
 		msgDao.deleteBatchMessageById(mIds);
 	}
+
+	public void saveMsg(String command, String description, String content) {
+		MessageDao msgDao = new MessageDao();
+		msgDao.saveMsg(command, description, content);
+
+	}
 }

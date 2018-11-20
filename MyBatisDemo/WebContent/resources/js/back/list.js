@@ -1,4 +1,14 @@
 /**
+ * 
+ * @param basePath
+ * @returns
+ */
+function jumpToAddMsgPage(basePath) {
+	$("#mainForm").attr("action", basePath + "JumpToAddMsgServlet.action");
+	$("#mainForm").submit();
+}
+
+/**
  * delete one message by id
  * 
  * @param basePath

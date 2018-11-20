@@ -8,6 +8,11 @@
 </head>
 <!-- 
 INSERT message VALUES (NULL,'查看1','描述1','内容1');
- -->
+
+CREATE TABLE command (id TINYINT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(20));
+CREATE TABLE content (id TINYINT PRIMARY KEY AUTO_INCREMENT,description VARCHAR(40),name VARCHAR(100),c_id TINYINT);
+
+ALTER TABLE content ADD FOREIGN KEY (c_id) REFERENCES command(id);
+-->
 
 </html>

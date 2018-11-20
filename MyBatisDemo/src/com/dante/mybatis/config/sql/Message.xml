@@ -43,4 +43,10 @@
 		)
 	</delete>
 
+	<insert id="insertMessage"
+		parameterType="com.dante.mybatis.bean.MessageBean">
+		insert message (command,description,content) VALUES
+		(#{command},#{description},#{content})
+	</insert>
+
 </mapper>

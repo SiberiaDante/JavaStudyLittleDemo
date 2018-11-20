@@ -11,20 +11,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>微信公众号</title>
 <!--讨论区滚动条begin-->
-<link rel="stylesheet" type="text/css"
+<link rel="stylesheet"
 	href="<%=basePath%>resources/css/jscrollpane1.css" />
 <script src="<%=basePath%>resources/js/common/jquery-1.8.0.min.js"
 	type="text/javascript"></script>
 <!-- the mousewheel plugin -->
-<script type="text/javascript" charset="utf-8"
+<script type="text/javascript"
 	src="<%=basePath%>resources/js/common/jquery.mousewheel.js"></script>
 <!-- the jScrollPane script -->
-<script type="text/javascript" charset="utf-8"
+<script type="text/javascript"
 	src="<%=basePath%>resources/js/common/jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" charset="utf-8"
+<script type="text/javascript" 
 	src="<%=basePath%>resources/js/common/scroll-startstop.events.jquery.js"></script>
 <!--讨论区滚动条end-->
-<script type="text/javascript" charset="utf-8"
+<script type="text/javascript" charset="UTF-8"
 	src="<%=basePath%>resources/js/front/talk.js"></script>
 </head>
 <body>

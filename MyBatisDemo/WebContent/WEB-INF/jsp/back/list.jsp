@@ -41,7 +41,7 @@
 			</div>
 			<div class="rightCont">
 				<p class="g_title fix">
-					内容列表 <a class="btn03" href="#">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+					内容列表 <a class="btn03" href="javascript:jumpToAddMsgPage('<%=basePath %>')">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 						class="btn03" href="javascript:deleteBatch('<%=basePath%>')">删
 						除</a>
 				</p>
