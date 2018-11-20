@@ -1,12 +1,6 @@
 package com.dante.mybatis.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -15,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dante.mybatis.bean.MessageBean;
-import com.dante.mybatis.dao.MessageDao;
 import com.dante.mybatis.service.ListService;
 
 @SuppressWarnings("serial")

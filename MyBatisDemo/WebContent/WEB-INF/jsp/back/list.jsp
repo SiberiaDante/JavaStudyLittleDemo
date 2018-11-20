@@ -16,8 +16,8 @@
 
 <link href="${basePath}resources/css/all.css" rel="stylesheet"
 	type="text/css" />
-<script src="${basePath}resources/js/jquery-3.3.1.js"></script>
-<script src="${basePath}resources/js/list.js"></script>
+<script src="${basePath}resources/js/common/jquery-3.3.1.js"></script>
+<script src="${basePath}resources/js/back/list.js"></script>
 
 <!-- <script type="text/javascript">
 	function deleteOne(url, id) {

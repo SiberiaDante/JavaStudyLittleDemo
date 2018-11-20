@@ -1,5 +1,6 @@
 /**
  * delete one message by id
+ * 
  * @param basePath
  * @returns
  */
@@ -21,7 +22,7 @@ function deleteOne(basePath, id) {
 		// document.getElementById("id").value = id;
 		// document.getElementById("mainForm").action = url;
 		// document.getElementById("mainForm").submit();
-		 $("#mainForm").attr("action", basePath + "deleteOne.action?id="+id);
+		$("#mainForm").attr("action", basePath + "deleteOne.action?id=" + id);
 		$("#mainForm").submit();
 	}
 }
@@ -36,6 +37,8 @@ function deleteBatch(basePath) {
 	 * document.getElementById("mainForm").action = basepath +
 	 * "deleteBatch.action"
 	 */
-	$("#mainForm").attr("action", basePath + "deleteBatch.action");
-	$("#mainForm").submit();
+	if (confirm("确定删除选中的数据嘛？")) {
+		$("#mainForm").attr("action", basePath + "deleteBatch.action");
+		$("#mainForm").submit();
+	}
 }
