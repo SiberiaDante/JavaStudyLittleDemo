@@ -10,7 +10,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Message">
+<mapper namespace="com.dante.mybatis.bean.entity.IMessage">
 
 	<resultMap type="com.dante.mybatis.bean.MessageBean"
 		id="MessageResult">
@@ -20,6 +20,43 @@
 			property="description" />
 		<result column="content" jdbcType="VARCHAR" property="content" />
 	</resultMap>
+
+	<select id="quesryMsgByFilterPage" parameterType="java.util.Map"
+		resultMap="MessageResult">
+		select id,command,description,content from message
+		<where>
+			<if
+				test="message.command !=null and !&quot;&quot;.equals(message.command.trim())"> and command = #{message.command}</if>
+			<if
+				test="message.description !=null and !&quot;&quot;.equals(message.description.trim())"> and description like '%' #{message.description} '%'</if>
+		</where>
+	</select>
+
+
+	<select id="quesryMsgByPage" parameterType="java.util.Map"
+		resultMap="MessageResult">
+		select id,command,description,content from message
+		<where>
+			<if
+				test="message.command !=null and !&quot;&quot;.equals(message.command.trim())"> and command = #{message.command}</if>
+			<if
+				test="message.description !=null and !&quot;&quot;.equals(message.description.trim())"> and description like '%' #{message.description} '%'</if>
+		</where>
+		order by id limit #{page.dbIndex},#{page.dbNum}
+	</select>
+
+
+	<select id="quesryAllMsgCount"
+		parameterType="com.dante.mybatis.bean.MessageBean" resultType="int">
+		select count(*) from message
+		<where>
+			<if test="command !=null and !&quot;&quot;.equals(command.trim())"> and command = #{command}</if>
+			<if
+				test="description !=null and !&quot;&quot;.equals(description.trim())"> and description like '%' #{description} '%'</if>
+		</where>
+	</select>
+
+
 
 	<select id="queryMessage"
 		parameterType="com.dante.mybatis.bean.MessageBean"

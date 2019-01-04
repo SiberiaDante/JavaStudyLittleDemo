@@ -16,6 +16,13 @@
 		alias="UserAlias" type="org.apache.ibatis.submitted.complex_property.User"/> 
 		</typeAliases> -->
 
+	<plugins>
+		<plugin
+			interceptor="com.dante.mybatis.bean.interceptor.PageInterceptor">
+			<property name="test" value="abc" />
+		</plugin>
+	</plugins>
+
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC">
@@ -29,8 +36,12 @@
 				<property name="password" value="123456" />
 			</dataSource>
 		</environment>
+		<!-- <environment id="production"></environment> -->
 	</environments>
 	<mappers>
 		<mapper resource="com/dante/mybatis/config/sql/Message.xml" />
+		<mapper resource="com/dante/mybatis/config/sql/Command.xml" />
+		<mapper
+			resource="com/dante/mybatis/config/sql/CommandContent.xml" />
 	</mappers>
 </configuration>

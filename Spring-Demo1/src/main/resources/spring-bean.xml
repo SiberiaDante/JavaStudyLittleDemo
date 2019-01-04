@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="injectService"
+		class="com.dante.service.InjectServiceImpl">
+		<property name="injectDao" ref="injectDao"></property>
+		<!-- <constructor-arg name="injectDao" ref="injectDao"></constructor-arg> -->
+	</bean>
+	<bean id="injectDao" class="com.dante.dao.InjectDaoImpl"></bean>
+	
+	
+	<!-- lifecycle  -->
+	<bean id="myBeanPostProcessor" class="com.dante.a_lifecycle.MyBeanPostProcessor"></bean>
+	<bean id="lifecycle" class="com.dante.a_lifecycle.UserServiceImpl" init-method="myInit" destroy-method="myDestroy">
+		<property name="name" value="SiberiaDante"/>
+	</bean>
+</beans>

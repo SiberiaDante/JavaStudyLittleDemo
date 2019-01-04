@@ -34,6 +34,7 @@
 </head>
 <body style="background: #e1e9eb;">
 	<form action="<%=basePath%>list.action" id="mainForm" method="post">
+		<input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}" />
 		<div class="right">
 			<div class="current">
 				当前位置：<a href="javascript:void(0)" style="color: #6E6E6E;">内容管理</a>
@@ -41,7 +42,8 @@
 			</div>
 			<div class="rightCont">
 				<p class="g_title fix">
-					内容列表 <a class="btn03" href="javascript:jumpToAddMsgPage('<%=basePath %>')">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+					内容列表 <a class="btn03"
+						href="javascript:jumpToAddMsgPage('<%=basePath%>')">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 						class="btn03" href="javascript:deleteBatch('<%=basePath%>')">删
 						除</a>
 				</p>
@@ -87,11 +89,16 @@
 						</tbody>
 					</table>
 					<div class='page fix'>
-						共 <b>4</b> 条 <a href='###' class='first'>首页</a> <a href='###'
-							class='pre'>上一页</a> 当前第<span>1/1</span>页 <a href='###'
-							class='next'>下一页</a> <a href='###' class='last'>末页</a> 跳至&nbsp;<input
-							type='text' value='1' class='allInput w28' />&nbsp;页&nbsp; <a
-							href='###' class='go'>GO</a>
+						共 <b>${page.totaNum}</b> 条 <a
+							href="javascript:changeCurrentPage('1')" class='first'>首页</a> <a
+							href="javascript:changeCurrentPage('${page.currentPage-1 }')"
+							class='pre'>上一页</a> 当前第<span>${page.currentPage }/${page.totalPage }</span>页
+						<a href="javascript:changeCurrentPage('${page.currentPage+1 }')"
+							class='next'>下一页</a> <a
+							href="javascript:changeCurrentPage('${page.totalPage }')"
+							class='last'>末页</a> 跳至&nbsp;<input id="jumpPage" type='text'
+							value='1' class='allInput w28' />&nbsp;页&nbsp; <a
+							href="javascript:changeCurrentPage($('#jumpPage').val())" class='go'>GO</a>
 					</div>
 				</div>
 			</div>

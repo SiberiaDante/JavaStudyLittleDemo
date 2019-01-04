@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <bean id="hello1" class="com.dante.demoaop07.HelloWorldImpl1"/>
+    <bean id="hello2" class="com.dante.demoaop07.HelloWorldImpl2"/>
+    <bean id="timeHandler" class="com.dante.demoaop07.TimerHandler"/>
+
+    <aop:config>
+        <aop:aspect id="timer" ref="timeHandler">
+            <aop:pointcut id="addAllMethod" expression=" execution(public *  com.dante.demoaop07.HelloWorld.*(..))"/>
+            <aop:before method="before" pointcut-ref="addAllMethod"/>
+            <aop:after method="after" pointcut-ref="addAllMethod"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

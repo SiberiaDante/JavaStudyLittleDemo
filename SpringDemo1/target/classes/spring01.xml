@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    <context:component-scan base-package="com.dante.demo05"/>
+    <beans>
+        <bean id="bookDao" class="com.dante.demo01.BookDAO"/>
+        <!--构造注入-->
+        <bean id="zdPerson" class="com.dante.demo02.ZDPerson">
+            <constructor-arg name="age" value="18"/>
+            <constructor-arg name="name" value="ZD"/>
+        </bean>
+
+        <!--属性注入-->
+        <bean id="tianJin" class="com.dante.demo03.Address">
+            <property name="city" value="TianJin"/>
+            <property name="country" value="China"/>
+        </bean>
+        <!--对象注入-->
+        <bean id="shangHai" class="com.dante.demo03.Address">
+            <constructor-arg name="city" value="ShangHai"/>
+            <constructor-arg name="country" value="China"/>
+        </bean>
+
+        <bean id="tom" class="com.dante.demo03.Student">
+            <constructor-arg name="age" value="22"/>
+            <constructor-arg name="name" value="Tom"/>
+            <constructor-arg name="address" ref="shangHai"/>
+        </bean>
+        <bean id="jack" class="com.dante.demo03.Student" scope="prototype">
+            <constructor-arg index="0" value="20"/>
+            <constructor-arg index="1" value="Jack"/>
+            <constructor-arg index="2" ref="shangHai"/>
+        </bean>
+
+    </beans>
+</beans>

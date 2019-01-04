@@ -20,6 +20,12 @@ public class MaintainService {
 	}
 
 	public void deleteBatchMessage(String[] ids) {
+		if (null == ids) {
+			return;
+		}
+		if (ids.length == 0) {
+			return;
+		}
 		List<Integer> mIds = new ArrayList<>();
 		for (String id : ids) {
 			mIds.add(Integer.valueOf(id));
